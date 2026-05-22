@@ -148,9 +148,9 @@ scikit-learn
 
 ```
 cloudsentry.ipynb               # Main notebook
-cloudsentry_results.csv         # Per-event alert output (generated on run)
-plot_timeseries_baseline.png    # Time series visualization (generated on run)
-plot_dbscan_clusters.png        # DBSCAN cluster visualization (generated on run)
-plot_isolation_forest_scores.png # Isolation Forest score distribution (generated on run)
+data/cloudsentry_results.csv         # Per-event alert output (generated on run)
+images/plot_timeseries_baseline.png    # Time series visualization (generated on run)
+images/plot_dbscan_clusters.png        # DBSCAN cluster visualization (generated on run)
+images/plot_isolation_forest_scores.png # Isolation Forest score distribution (generated on run)
 README.md                       # This file
 ```
