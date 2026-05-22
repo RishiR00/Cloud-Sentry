@@ -31,7 +31,7 @@ The notebook follows the **CRISP-DM** methodology across six phases:
 3. Data Preparation & EDA
 4. Modeling
 5. Evaluation
-6. Deployment
+
 
 ---
 
@@ -151,24 +151,6 @@ Phase 5c also includes **hyperparameter tuning** via grid search for each model:
 - **DBSCAN:** sweeps `eps` × `min_samples`
 - **Isolation Forest:** sweeps `contamination` × `n_estimators`
 - **Time Series:** sweeps `window_days` × `z_threshold`
-
----
-
-## Deployment
-
-In production, CloudSentry is wrapped in a streaming pipeline:
-
-```
-CloudTrail → S3 / Kinesis → Feature Builder → Persisted Models → Alert Bus / SIEM
-```
-
-The `CloudSentryModel` class packages the fitted scaler and Isolation Forest for scoring new event batches on demand — no labels required:
-
-```python
-model = CloudSentryModel(scaler=scaler, iso_forest=iso_model, feature_cols=FEATURE_COLS)
-scored = model.score_new_events(new_df)
-# Returns input df with two new columns: anomaly_score (float) and is_anomaly (0/1)
-```
 
 ---
 
